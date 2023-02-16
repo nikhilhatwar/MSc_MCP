@@ -1,0 +1,46 @@
+
+
+
+80
+1
+1
+6400
+100000
+
+           
+
+
+
+
+
+
+
+#  L,  Je,  t,  omcc,  tmcc
+
+
+
+
+# omcc should be roughly equal to L**2
+
+			
+# L = length of the 2D square array
+		
+# Je = strength of spin-spin interaction
+
+# t = temperature in reduced units
+
+# omcc = one monte carlo cycle
+
+# tmcc = total monte carlo cycle
+
+
+
+
+
+
+#Initial conditions
+
+
+#5,1,0.5,50,100000
+
+#  L,  Je,  t,  omcc,  tmcc

@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+		MODULE omnitrix
+		REAL,ALLOCATABLE::y(:),x(:),esp(:)
+		
+		REAL::V0,a,h,xm,del,N,xc,espt
+		END MODULE
+
+
+
+		PROGRAM Shenron
+		USE omnitrix
+		IMPLICIT NONE
+		
+		INTEGER::i,j,k
+		
+	
+		!OPEN(UNIT=10,FILE='in.dat')
+		OPEN(UNIT=20,FILE='e.dat')
+
+
+		DO i=1,9
+		READ(10,*),esp(i)	
+		ENDDO
+
+		i=-1
+		j=-2
+		
+		if(i<j)k=3
+
+		print*,i,j,k
+		
+
+		END PROGRAM

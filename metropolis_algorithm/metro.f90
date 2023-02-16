@@ -1,0 +1,55 @@
+				
+
+
+
+			!date: 17-09-2015
+			!Metropolis algorithm to generate random numbers of 
+			! any given distribution
+			!Enter the value of x(1) and n
+			
+			PROGRAM shenron
+			IMPLICIT NONE
+			REAL::x(900000),w,del(900000),p,xtral,r,u
+			INTEGER::i,n
+			
+			x(1)=0				!INPUTS
+			n=10000
+
+			OPEN(UNIT=30,FILE='metroout.dat')
+			DO i=1,n
+				CALL RANDOM_NUMBER(r)
+				del(i)=-2+4*r		
+			ENDDO		
+			
+			DO i=1,n
+				xtral=x(i)+del(i)
+				w=p(xtral)/p(x(i))
+				IF(w>=1)THEN 
+					x(i+1)=xtral
+				ELSE	
+					CALL RANDOM_NUMBER(u)
+					IF(u<w)THEN 
+						x(i+1)=xtral
+					ELSE
+						x(i+1)=x(i)
+					ENDIF	
+				ENDIF			
+			ENDDO
+			DO i=1,n
+				WRITE(30,*),x(i)
+			ENDDO
+			END PROGRAM
+              		
+
+
+
+
+			REAL FUNCTION p(x)
+				IF(-10<x .AND. x<=10)THEN
+					p=exp(-x*x)
+				ELSE
+					p=0
+				ENDIF
+			END FUNCTION p
+
+		
